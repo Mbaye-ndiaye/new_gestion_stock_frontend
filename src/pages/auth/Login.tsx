@@ -1,27 +1,22 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
 import ImageLogin from "../../assets/ImageLogin.png"
+import { useAuth } from "./index"
 
 export default function Login() {
-    const navigate = useNavigate()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [userType, ] = useState<"admin" | "employee">("admin")
+    const { setShowOtp, setUserEmail, setShowForgotPassword } = useAuth()
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-
-        if (userType === "admin") {
-            navigate("/dashboard")
-        } else {
-            navigate("/dashboard")
-        }
+        setUserEmail(email)
+        setShowOtp(true)
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-            <div className="max-w-6xl w-full bg-white shadow-2xl overflow-hidden">
-                <div className="flex flex-col md:flex-row">
+        <div className="min-h-screen flex items-center justify-center bg-gray-50 ">
+            <div className="max-w-6xl w-full h-[650px] bg-white shadow-2xl overflow-hidden">
+                <div className="flex flex-col md:flex-row h-full">
                     {/* Image Section */}
                     <div className="md:w-1/2 relative overflow-hidden">
                         <div
@@ -66,38 +61,14 @@ export default function Login() {
                     </div>
 
                     {/* Form Section */}
-                    <div className="md:w-1/2 p-8 md:px-12 md:py-17">
-                        <div className="max-w-sm mx-auto">
+                    <div className="md:w-1/2">
+                        <div className="max-w-sm mx-auto flex flex-col h-full justify-center">
                             <div className=" mb-8">
                                 <h2 className="text-3xl font-bold text-[#111827] mb-2">Connectez-vous</h2>
-                                <p className="text-[#020617]">Accédez à votre interface dédiée à la gestion des taxes sur l’ensemble du territoire national.</p>
+                                <p className="text-[#020617]">Accédez à votre interface dédiée à la gestion des taxes sur l'ensemble du territoire national.</p>
                             </div>
 
                             <form onSubmit={handleSubmit} className="space-y-6">
-                                {/* User Type Selection */}
-                                {/* <div className="flex space-x-4 mb-6">
-                                    <button
-                                        type="button"
-                                        onClick={() => setUserType("admin")}
-                                        className={`flex-1 py-2 px-4 rounded-lg font-medium transition-colors ${userType === "admin"
-                                                ? "bg-blue-600 text-white"
-                                                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                                            }`}
-                                    >
-                                        Administrateur
-                                    </button>
-                                    <button
-                                        type="button"
-                                        onClick={() => setUserType("employee")}
-                                        className={`flex-1 py-2 px-4 rounded-lg font-medium transition-colors ${userType === "employee"
-                                                ? "bg-blue-600 text-white"
-                                                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                                            }`}
-                                    >
-                                        Employé
-                                    </button>
-                                </div> */}
-
                                 {/* Email Field */}
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-medium text-[#111827] mb-2">
@@ -132,45 +103,32 @@ export default function Login() {
 
                                 {/* Remember Me & Forgot Password */}
                                 <div className="flex items-center justify-between">
-                                    <label className="flex items-center">
+                                    <label className="flex items-center cursor-pointer">
                                         <input
                                             type="checkbox"
                                             className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                                         />
                                         <span className="ml-2 text-sm text-[#6B7280]">Se souvenir de moi</span>
                                     </label>
-                                    <a href="#" className="text-sm text-[#6B7280] hover:text-[#6B7280]">
+                                    <button
+                                        className="cursor-pointer decoration-none border-none bg-transparent text-sm text-[#6B7280] hover:text-[#6B7280]"
+                                        onClick={(e) => {
+                                            e.preventDefault()
+                                            setShowForgotPassword(true)
+                                        }}
+                                    >
                                         Mot de passe oublié?
-                                    </a>
+                                    </button>
                                 </div>
 
                                 {/* Submit Button */}
                                 <button
                                     type="submit"
-                                    className="w-full bg-[#164E63] text-white py-3 px-4 rounded-lg font-medium hover:bg-[#164E63] focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 transition-all transform hover:scale-[1.02]"
+                                    className="cursor-pointer w-full bg-[#164E63] text-white py-3 px-4 rounded-lg font-medium hover:bg-[#164E63] focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 transition-all transform hover:scale-[1.02]"
                                 >
                                     Se connecter
                                 </button>
                             </form>
-
-                            {/* Demo Buttons */}
-                            {/* <div className="mt-8 pt-8 border-t border-gray-200">
-                                <p className="text-center text-sm text-gray-600 mb-4">Accès rapide démo:</p>
-                                <div className="flex space-x-2">
-                                    <button
-                                        onClick={() => navigate("/dashboard")}
-                                        className="flex-1 py-2 px-3 bg-gray-100 text-gray-700 rounded-lg text-sm hover:bg-gray-200 transition-colors"
-                                    >
-                                        Admin Démo
-                                    </button>
-                                    <button
-                                        onClick={() => navigate("/dashboard")}
-                                        className="flex-1 py-2 px-3 bg-gray-100 text-gray-700 rounded-lg text-sm hover:bg-gray-200 transition-colors"
-                                    >
-                                        Employé Démo
-                                    </button>
-                                </div>
-                            </div> */}
                         </div>
                     </div>
                 </div>

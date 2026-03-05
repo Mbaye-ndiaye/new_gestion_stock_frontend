@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom"
-import Login from "../pages/auth/Login"
+import AuthPage, { AuthProvider } from "../pages/auth/index"
 import DashboardLayout from "../layouts/DashboardLayout"
 
 import Dashboard from "../pages/Admin/Dashboard"
@@ -11,7 +11,7 @@ import Settings from "../pages/Admin/Settings"
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />
+    element: <AuthProvider><AuthPage /></AuthProvider>
   },
   {
     path: "/",
