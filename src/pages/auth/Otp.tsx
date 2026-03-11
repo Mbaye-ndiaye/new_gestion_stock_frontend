@@ -5,7 +5,7 @@ import { useAuth } from "./index"
 
 export default function Otp() {
     const navigate = useNavigate()
-    const [otpValues, setOtpValues] = useState(["", "", "", ""])
+    const [otpValues, setOtpValues] = useState(["", "", "", "", "", ""]) // 6 champs maintenant
     const { userEmail, setShowOtp } = useAuth()
 
     const handleOtpChange = (index: number, value: string) => {
@@ -15,7 +15,8 @@ export default function Otp() {
         newOtpValues[index] = value
         setOtpValues(newOtpValues)
 
-        if (value && index < 3) {
+        // Auto-focus next input
+        if (value && index < 5) { // Changé de 3 à 5
             const nextInput = document.getElementById(`otp-${index + 1}`)
             if (nextInput) {
                 nextInput.focus()
@@ -24,6 +25,7 @@ export default function Otp() {
     }
 
     const handleKeyDown = (index: number, e: React.KeyboardEvent) => {
+        // Handle backspace to go to previous input
         if (e.key === "Backspace" && !otpValues[index] && index > 0) {
             const prevInput = document.getElementById(`otp-${index - 1}`)
             if (prevInput) {
@@ -36,7 +38,7 @@ export default function Otp() {
         e.preventDefault()
         const otpCode = otpValues.join("")
         
-        if (otpCode.length === 4) {
+        if (otpCode.length === 6) { 
             navigate("/dashboard")
         }
     }
@@ -115,7 +117,7 @@ export default function Otp() {
                                     <label className="block text-sm font-medium text-[var(--color-muted-foreground)] mb-4">
                                         Entrez le code ici:
                                     </label>
-                                    <div className="flex space-x-2 sm:space-x-3 justify-center">
+                                    <div className="flex flex-wrap gap-2 sm:gap-3 justify-center max-w-sm mx-auto">
                                         {otpValues.map((value, index) => (
                                             <input
                                                 key={index}
@@ -124,12 +126,13 @@ export default function Otp() {
                                                 value={value}
                                                 onChange={(e) => handleOtpChange(index, e.target.value)}
                                                 onKeyDown={(e) => handleKeyDown(index, e)}
-                                                className="w-12 h-12 sm:w-16 sm:h-16 text-center text-xl sm:text-2xl font-bold border border-[var(--color-border)] rounded-lg focus:ring-2 focus:ring-[var(--color-ring)] focus:border-transparent outline-none transition-all"
+                                                className="w-12 h-12 md:w-12 md:h-12 text-center text-[var(--color-primary)] text-lg sm:text-xl md:text-2xl font-bold border border-[var(--color-border)] rounded-lg focus:ring-1 focus:ring-[var(--color-ring)] focus:border-transparent outline-none transition-all"
                                                 maxLength={1}
                                                 pattern="[0-9]"
                                                 inputMode="numeric"
                                                 autoComplete="one-time-code"
                                                 required
+                                                placeholder="0"
                                             />
                                         ))}
                                     </div>
