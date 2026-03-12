@@ -55,7 +55,7 @@ export default function Otp() {
                         >
                             <div className="absolute inset-0 bg-black/40"></div>
                         </div>
-                        <div className="relative z-10 p-8 flex items-center justify-center h-full">
+                        <div className="relative z-10 p-8 flex items-center justify-center h-full w-full">
                             <div className="text-center text-white">
                                 <div className="mb-8">
                                     <div className="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -91,7 +91,7 @@ export default function Otp() {
                     </div>
 
                     {/* Form Section - Prend toute la largeur sur mobile */}
-                    <div className="w-full md:w-1/2 p-6 sm:p-8 md:p-12">
+                    <div className="w-full md:w-1/2 p-6 sm:p-8 md:p-12 mt-10">
                         <div className="max-w-sm mx-auto flex flex-col justify-center items-center text-center h-full">
                             {/* Logo pour mobile */}
                             <div className="md:hidden flex justify-center mb-6">
@@ -107,7 +107,7 @@ export default function Otp() {
                                 <p className="text-[var(--color-muted-foreground)] text-sm sm:text-base">Un code a été envoyé à votre adresse e-mail enregistrée.</p>
                             </div>
 
-                            <div className="mb-6 p-4 bg-gray-50 rounded-lg w-full">
+                            <div className="mb-6 p-4 rounded-lg w-full">
                                 <p className="text-sm text-[var(--color-muted)] mb-1">La mail d'authentification est le suivant</p>
                                 <p className="font-medium text-[var(--color-foreground)] text-sm sm:text-base break-words">{userEmail}</p>
                             </div>

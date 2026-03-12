@@ -26,7 +26,7 @@ export default function Login() {
                         >
                             <div className="absolute inset-0 bg-black/40"></div>
                         </div>
-                        <div className="relative z-10 p-8 flex items-center justify-center h-full">
+                        <div className="relative z-10 p-8 flex items-center justify-center h-full w-full">
                             <div className="text-center text-white">
                                 <div className="mb-8">
                                     <div className="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -62,7 +62,7 @@ export default function Login() {
                     </div>
 
                     {/* Form Section - Prend toute la largeur sur mobile */}
-                    <div className="w-full md:w-1/2 p-6 sm:p-8 md:p-12">
+                    <div className="w-full md:w-1/2 p-6 sm:p-8 md:p-12 mt-10">
                         <div className="max-w-sm mx-auto">
                             {/* Logo pour mobile (optionnel) */}
                             <div className="md:hidden flex justify-center mb-6">
@@ -134,7 +134,7 @@ export default function Login() {
                                     <label className="flex items-center cursor-pointer">
                                         <input
                                             type="checkbox"
-                                            className="w-4 h-4 accent-[var(--color-muted)] rounded focus:ring-1 focus:ring-[var(--color-muted)]"
+                                            className="w-4 h-4 accent-[var(--color-muted)] rounded "
                                         />
                                         <span className="ml-2 text-sm text-[var(--color-muted)]">Se souvenir de moi</span>
                                     </label>
