@@ -117,7 +117,7 @@ export default function Otp() {
                                     <label className="block text-sm font-medium text-[var(--color-muted-foreground)] mb-4">
                                         Entrez le code ici:
                                     </label>
-                                    <div className="flex flex-wrap gap-2 sm:gap-3 justify-center max-w-sm mx-auto">
+                                    <div className="flex  gap-2 sm:gap-3 justify-center max-w-sm mx-auto">
                                         {otpValues.map((value, index) => (
                                             <input
                                                 key={index}
@@ -126,7 +126,9 @@ export default function Otp() {
                                                 value={value}
                                                 onChange={(e) => handleOtpChange(index, e.target.value)}
                                                 onKeyDown={(e) => handleKeyDown(index, e)}
-                                                className="w-12 h-12 md:w-12 md:h-12 text-center text-[var(--color-primary)] text-lg sm:text-xl md:text-2xl font-bold border border-[var(--color-border)] rounded-lg focus:ring-1 focus:ring-[var(--color-ring)] focus:border-transparent outline-none transition-all"
+                                               className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 text-center text-[var(--color-primary)] text-base sm:text-lg md:text-xl
+                                                font-bold border border-[var(--color-border)] rounded-lg focus:ring-1 focus:ring-[var(--color-ring)] 
+                                                focus:border-transparent outline-none transition-all"
                                                 maxLength={1}
                                                 pattern="[0-9]"
                                                 inputMode="numeric"
