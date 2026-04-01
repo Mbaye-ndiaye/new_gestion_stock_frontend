@@ -16,7 +16,7 @@ export default function Login() {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-[var(--color-background)] px-4 py-8">
-            <div className="w-full max-w-6xl bg-[var(--color-primary-foreground)] shadow-lg overflow-hidden rounded-2xl">
+            <div className="w-full max-w-6xl bg-[var(--color-small-foreground)] shadow-lg overflow-hidden rounded-2xl">
                 <div className="flex flex-col md:flex-row h-auto md:h-[650px]">
                     {/* Image Section - Masquée sur mobile (sm et en dessous) */}
                     <div className="hidden md:flex md:w-1/2 relative overflow-hidden">

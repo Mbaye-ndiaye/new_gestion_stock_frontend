@@ -55,7 +55,7 @@
 /* ===== UI COLORS ================= */
 /* ================================= */
 
---color-background: #F0FDF4;
+--color-background: #faf6f6;
 --color-foreground: #020617;
 
 --color-card: hsl(0 0% 100%);
@@ -69,6 +69,10 @@
 
 --color-muted: #6B7280;
 --color-muted-foreground: #111827;
+
+--color-small-background: #F0FDF4;
+--color-small-foreground: #FFFFFF;
+
 
 --color-border: #083344;
 --color-input: hsl(214 31% 91%);

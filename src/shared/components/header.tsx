@@ -14,7 +14,7 @@ export default function Header({ toggleSidebar }: Props) {
 
       {/* Left */}
       <div className="flex items-center gap-4">
-        <button onClick={toggleSidebar}>
+        <button >
           <Menu className="w-6 h-6 text-gray-600 dark:text-gray-300" />
         </button>
 
@@ -33,7 +33,7 @@ export default function Header({ toggleSidebar }: Props) {
         
         {/* Dark mode toggle */}
         <button
-          onClick={toggleTheme}
+          // onClick={toggleTheme}
           className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           title="Basculer en mode sombre"
         >

@@ -7,7 +7,7 @@ import Header from "../shared/components/header"
 export default function DashboardLayout() {
   const [open, setOpen] = useState(true)
   return (
-    <div className="flex">
+    <div className="flex bg-[var(--color-small-foreground)]">
       <div className={`fixed top-0 left-0 h-full transition-all duration-300 ${open ? "w-64" : "w-16"}`}>
         <Sidebar collapsed={!open} />
       </div>
