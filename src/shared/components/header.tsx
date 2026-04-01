@@ -1,4 +1,4 @@
-import { Menu, Bell, Search } from "lucide-react"
+import { Menu, Bell, Search, Moon } from "lucide-react"
 import { Avatar, AvatarFallback } from "./ui/avatar"
 
 interface Props {
@@ -29,6 +29,14 @@ export default function Header({ toggleSidebar }: Props) {
         </div>
         <button>
           <Bell className="w-5 h-5 text-gray-600" />
+        </button>
+
+        <button
+          className="p-2 rounded-lg"
+          title="Mode sombre"
+        >
+          <Moon className="w-5 h-5 text-gray-600" />
+          
         </button>
 
         <div className="flex items-center gap-2">

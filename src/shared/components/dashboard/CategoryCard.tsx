@@ -16,15 +16,13 @@ export default function CategoryCard() {
         Répartition du volume stocké
       </p>
 
-      <div className="space-y-5">
+      <div className="space-y-4 p-2 ">
         {data.map((item, index) => (
-          <div key={index}>
-            <div className="flex justify-between mb-1 text-sm">
-              <span>{item.name}</span>
-              {/* <span className="font-medium">{item.value}%</span> */}
+          <div key={index} className="flex items-center gap-3">
+            <span className="text-sm min-w-[80px]">{item.name}</span>
+            <div className="flex-1">
+              <ProgressBar value={item.value} color={item.color} />
             </div>
-
-            <ProgressBar value={item.value} color={item.color} />
           </div>
         ))}
       </div>

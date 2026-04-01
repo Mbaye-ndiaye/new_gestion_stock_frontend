@@ -14,8 +14,8 @@ export default function ChartCard() {
           </p>
         </div>
 
-        <div className="flex gap-2 text-sm">
-          <button className="px-3 py-1 rounded-md bg-[var(--color-muted)]">
+        <div className="flex gap-2 text-sm text-gray-400">
+          <button className="px-3 py-1 rounded-md bg-[#eff2f0]">
             6 Mois
           </button>
           <button className="px-3 py-1 rounded-md">
