@@ -16,7 +16,7 @@ const data = [
 
 export default function StockChart() {
     return (
-        <div className="w-full h-[300px]">
+        <div className="w-full h-75">
             <ResponsiveContainer>
                 <AreaChart data={data}>
 
@@ -41,15 +41,15 @@ export default function StockChart() {
                     {/* Zone */}
                     <defs>
                         <linearGradient id="colorStock" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="var(--color-primary)" stopOpacity={0.4} />
-                            <stop offset="95%" stopColor="var(--color-primary)" stopOpacity={0} />
+                            <stop offset="5%" stopColor="#16a34a" stopOpacity={0.2} />
+                            <stop offset="95%" stopColor="#16a34a" stopOpacity={0} />
                         </linearGradient>
                     </defs>
 
                     <Area
                         type="monotone"
                         dataKey="value"
-                        stroke="var(--color-primary)"
+                        stroke="#16a34a"
                         fill="url(#colorStock)"
                         strokeWidth={3}
                     />

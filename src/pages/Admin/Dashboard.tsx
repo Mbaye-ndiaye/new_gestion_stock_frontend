@@ -2,6 +2,8 @@ import DashboardHeader from "../../shared/components/dashboard/DashboardHeader"
 import StatCard from "../../shared/components/dashboard/StatCard"
 import ChartCard from "../../shared/components/dashboard/ChartCard"
 import CategoryCard from "../../shared/components/dashboard/CategoryCard"
+import { LuDollarSign, LuLayers, LuTrendingUp } from "react-icons/lu"
+import { FiAlertTriangle } from "react-icons/fi";
 export default function Dashboard() {
   return (
     <div className="p-6 space-y-6">
@@ -13,7 +15,8 @@ export default function Dashboard() {
         <StatCard
           title="Valeur Totale Stock"
           value="5.100.000 FCFA"
-          badge="+4.2% ce mois"
+          badge="+4.2% ce mois
+          "icon={<LuDollarSign className="w-6 h-6" color="orange"/>}
           color="var(--color-stock-ok)"
           bgColor="var(--color-background)"
         />
@@ -21,6 +24,7 @@ export default function Dashboard() {
           title="Produits en Stock"
           value="1.240"
           badge="12 nouvelles refs"
+          icon={<LuLayers className="w-6 h-6" color="blue"/>}
           color="var(--color-stock-ok)"
           bgColor="var(--color-background)"
         />
@@ -28,6 +32,7 @@ export default function Dashboard() {
           title="Alertes Rupture"
           value="3"
           badge="Action requise"
+          icon={<FiAlertTriangle className="w-6 h-6" color="red" />}
           color="var(--color-foreground-muted)"
           bgColor="#FEF2F2"
         />
@@ -35,6 +40,7 @@ export default function Dashboard() {
           title="Mouvements (24h)"
           value="+42 / -15"
           badge="Stable"
+          icon={<LuTrendingUp className="w-6 h-6" color="blue" />}
           color="var(--color-stock-ok)"
           bgColor="var(--color-background)"
         />
