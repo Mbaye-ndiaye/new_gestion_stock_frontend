@@ -16,9 +16,9 @@ export default function Dashboard() {
           title="Valeur Totale Stock"
           value="5.100.000 FCFA"
           badge="+4.2% ce mois
-          "icon={<LuDollarSign className="w-6 h-6" color="orange"/>}
+          "icon={<LuDollarSign className="w-6 h-6" color="var(--color-stock-ok)"/>}
           color="var(--color-stock-ok)"
-          bgColor="var(--color-background)"
+          bgColor="var(--color-small-background)"
         />
         <StatCard
           title="Produits en Stock"
@@ -26,7 +26,7 @@ export default function Dashboard() {
           badge="12 nouvelles refs"
           icon={<LuLayers className="w-6 h-6" color="blue"/>}
           color="var(--color-stock-ok)"
-          bgColor="var(--color-background)"
+          bgColor="var(--color-small-background)"
         />
         <StatCard
           title="Alertes Rupture"
@@ -40,9 +40,9 @@ export default function Dashboard() {
           title="Mouvements (24h)"
           value="+42 / -15"
           badge="Stable"
-          icon={<LuTrendingUp className="w-6 h-6" color="blue" />}
+          icon={<LuTrendingUp className="w-6 h-6" color="#8B5CF6" />}
           color="var(--color-stock-ok)"
-          bgColor="var(--color-background)"
+          bgColor="var(--color-small-background)"
         />
       </div>
 
