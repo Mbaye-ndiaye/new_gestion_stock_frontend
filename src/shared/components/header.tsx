@@ -10,13 +10,15 @@ export default function Header({ toggleSidebar }: Props) {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <div className="h-16 flex items-center justify-between px-6 border-b border-[var(--color-input)] bg-white dark:bg-gray-900 dark:border-gray-700">
+    <div className="h-16 flex items-center justify-between px-6 border-b border-[var(--color-input)] bg-[var(--color-background)]">
 
       {/* Left */}
       <div className="flex items-center gap-4">
-        <button >
-          <Menu className="w-6 h-6 text-gray-600 dark:text-gray-300" />
-        </button>
+        {toggleSidebar && (
+          <button onClick={toggleSidebar}>
+            <Menu className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+          </button>
+        )}
 
       </div>
 
@@ -33,7 +35,7 @@ export default function Header({ toggleSidebar }: Props) {
         
         {/* Dark mode toggle */}
         <button
-          // onClick={toggleTheme}
+          onClick={() => toggleTheme()}
           className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           title="Basculer en mode sombre"
         >
