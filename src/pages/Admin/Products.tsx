@@ -1,6 +1,8 @@
 import DataTable from "../../shared/components/table/DataTable"
 import { columns } from "../../shared/components/table/columns"
 import TableToolbar from "../../shared/components/table/TableToolbar"
+import CreateProductModal from "../../shared/components/modals/CreateProductModal"
+import ProductGrid from "../../shared/components/table/ProductGrid"
 import img from "../../assets/img.png"
 import img1 from "../../assets/img (1).png"
 import img2 from "../../assets/img (2).png"
@@ -25,6 +27,7 @@ export default function Products() {
   const [viewMode, setViewMode] = useState<'table' | 'grid'>('table')
   const [category, setCategory] = useState("")
 const [status, setStatus] = useState("")
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false)
 
   // 🔥 LES DONNÉES TEMPORAIRES ICI
   const data = [
@@ -207,7 +210,10 @@ const filteredData = data.filter((item) => {
           </p>
         </div>
 
-        <button className="bg-[var(--color-stock-ok)] text-white px-3 py-1 rounded-2xl shadow-lg">
+        <button 
+          onClick={() => setIsCreateModalOpen(true)}
+          className="bg-[var(--color-stock-ok)] text-white px-3 py-1 rounded-2xl shadow-lg"
+        >
           + Nouveau Produit
         </button>
       </div>
@@ -228,11 +234,18 @@ const filteredData = data.filter((item) => {
         <DataTable columns={columns} data={filteredData}  />
 
       ) : (
-        <div> <h1>Vue en grille</h1> </div>
+        <ProductGrid 
+          data={filteredData} 
+          onAddProduct={() => setIsCreateModalOpen(true)}
+        />
       )}
 
       {/* Table */}
 
+      <CreateProductModal 
+        isOpen={isCreateModalOpen} 
+        onClose={() => setIsCreateModalOpen(false)} 
+      />
     </div>
   )
 }
