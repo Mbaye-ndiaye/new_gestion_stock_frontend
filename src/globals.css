@@ -55,7 +55,7 @@
 /* ===== UI COLORS ================= */
 /* ================================= */
 
---color-background: #faf6f6;
+--color-background: #F9FAFB;
 --color-foreground: #020617;
 
 --color-card: hsl(0 0% 100%);
@@ -85,9 +85,10 @@
 
 /* stock */
 
---color-stock-ok: #22C55E;
+--color-stock-ok: #16A085;
 --color-stock-low: hsl(38 92% 50%);
---color-stock-out: hsl(0 84% 60%);
+--color-stock-out: #FB2C36;
+--color-stock-background: #22C55E;
 
 /* commandes */
 
@@ -118,6 +119,15 @@
 
 --color-border: hsl(217 32% 17%);
 --color-input: hsl(217 32% 17%);
+
+--color-primary-foreground: #64748B;
+  --color-secondary-foreground: #E2E8F0;
+  --color-muted: #6B7280;
+  --color-muted-foreground: #E5E7EB;
+  --color-small-background: #1F2937;
+  --color-small-foreground: #111827;
+  --color-ring: #3B82F6;
+  --color-foreground-muted: #EF4444;
 
 @theme {
   --breakpoint-xs: 390px;
