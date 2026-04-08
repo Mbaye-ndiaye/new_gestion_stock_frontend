@@ -17,7 +17,7 @@ export default function DashboardLayout() {
         {/* Flèche toggle */}
         <button 
           onClick={() => setOpen(!open)}
-          className="fixed top-3 left-10 z-50 p-2 bg-[var(--color-card)] rounded-full shadow-lg hover:shadow-xl transition-all"
+          className={` ${open ? "fixed top-3 left-60" : "fixed top-3 left-10"}  z-50 p-2 bg-[var(--color-card)] rounded-full shadow-lg hover:shadow-xl transition-all`}
         >
           {open ? (
             <ChevronLeft className="h-5 w-5 text-[var(--color-foreground)]" />

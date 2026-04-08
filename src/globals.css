@@ -92,7 +92,7 @@
 
 /* commandes */
 
---color-order-pending: hsl(43 96% 56%);
+--color-order-pending: rgba(0,0,0,0.1);
 --color-order-processing: hsl(221 83% 53%);
 --color-order-completed: hsl(142 71% 45%);
 
@@ -152,7 +152,9 @@ font-family: var(--font-sans);
 }
 
 
-
+*{
+  /* outline: 1px solid red; */
+}
 /* container */
 
 .list {
