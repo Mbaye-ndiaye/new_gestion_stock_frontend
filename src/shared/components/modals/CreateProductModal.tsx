@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import { Box, DollarSign, Truck, Image as ImageIcon, X, UploadCloud } from 'lucide-react';
+import { useState } from 'react';
 
 interface CreateProductModalProps {
   isOpen: boolean;

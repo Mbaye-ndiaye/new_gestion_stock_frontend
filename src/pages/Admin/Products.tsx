@@ -11,15 +11,15 @@ import { useState } from "react"
 
 
 
-interface Product {
-  id: number
-  sku: string
-  name: string
-  category: string
-  stock: number
-  price: number
-  status: 'En Stock' | 'Rupture' | 'Stock Faible'
-}
+// interface Product {
+//   id: number
+//   sku: string
+//   name: string
+//   category: string
+//   stock: number
+//   price: number
+//   status: 'En Stock' | 'Rupture' | 'Stock Faible'
+// }
 
 
 export default function Products() {
