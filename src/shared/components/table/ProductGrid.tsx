@@ -2,29 +2,29 @@ export default function ProductGrid({ data, onAddProduct }: { data: any[], onAdd
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {data.map((product, index) => (
-        <div key={index} className="bg-white rounded-[20px] border border-gray-100 shadow-sm overflow-hidden flex flex-col">
-          <div className="relative h-60 bg-gray-50 m-2 rounded-2xl overflow-hidden flex items-center justify-center">
-            <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+        <div key={index} className="bg-[var(--color-background)] rounded-[20px] border border-[var(--color-input)] shadow-sm overflow-hidden flex flex-col">
+          <div className="relative h-60  m-2 rounded-2xl overflow-hidden flex items-center justify-center">
+            <img src={product.image} alt={product.name} className="w-full h-full object-cover text-[var(--color-foreground)]" />
             <div className="absolute top-3 right-3">
               {product.status === 'IN_STOCK' && (
-                <span className="bg-[#E8F5E9] text-[#16A085] text-[10px] font-extrabold px-3 py-1 rounded-full tracking-wide">IN STOCK</span>
+                <span className="bg-green-100 text-[var(--color-stock-ok)] text-[10px] font-extrabold px-3 py-1 rounded-full tracking-wide">IN STOCK</span>
               )}
               {product.status === 'LOW' && (
-                <span className="bg-[#FFF8E1] text-[#F59E0B] text-[10px] font-extrabold px-3 py-1 rounded-full tracking-wide">LOW STOCK</span>
+                <span className="bg-yellow-100 text-[var(--color-stock-low)] text-[10px] font-extrabold px-3 py-1 rounded-full tracking-wide">LOW STOCK</span>
               )}
               {product.status === 'CRITICAL' && (
-                <span className="bg-[#FEE2E2] text-[#EF4444] text-[10px] font-extrabold px-3 py-1 rounded-full tracking-wide">CRITICAL</span>
+                <span className="bg-red-100 text-[var(--color-stock-out)] text-[10px] font-extrabold px-3 py-1 rounded-full tracking-wide">CRITICAL</span>
               )}
             </div>
           </div>
 
           <div className="p-5 pt-3 flex-1 flex flex-col justify-between">
             <div className="mb-6">
-              <div className="flex justify-between items-center text-[10px] font-bold text-gray-400 mb-1.5 uppercase tracking-wider">
+              <div className="flex justify-between items-center text-[10px] font-bold text-[var(--color-muted)] mb-1.5 uppercase tracking-wider">
                 <span>{product.category}</span>
                 <span>{product.sku}</span>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 leading-tight">{product.name}</h3>
+              <h3 className="text-lg font-bold text-[var(--color-foreground)] leading-tight">{product.name}</h3>
             </div>
             
             <div className="flex justify-between items-end">
@@ -36,7 +36,7 @@ export default function ProductGrid({ data, onAddProduct }: { data: any[], onAdd
               </div>
               <div className="text-right">
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1">Stock</p>
-                <p className="text-[19px] font-extrabold text-gray-900 leading-none">{product.stock}</p>
+                <p className="text-[19px] font-extrabold text-[var(--color-muted)] leading-none">{product.stock}</p>
               </div>
             </div>
           </div>

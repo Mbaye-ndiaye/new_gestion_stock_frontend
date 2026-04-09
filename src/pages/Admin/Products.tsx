@@ -202,7 +202,7 @@ const filteredData = data.filter((item) => {
     <div className="space-y-6">
 
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row items-center justify-between">
         <div>
           <h1 className="text-4xl font-bold text-[var(--color-foreground)]">Catalogue Produits</h1>
           <p className="text-sm text-[var(--color-muted)] pt-2">
