@@ -64,8 +64,10 @@
 --color-primary: #9CA3AF;
 --color-primary-foreground: #99A1AF;
 
---color-secondary: #CFFAFE;
---color-secondary-foreground: #083344;
+--color-secondary: hsl(217 32% 17%);
+--color-secondary-foreground: #E2E8F0;
+
+
 
 --color-muted: #6B7280;
 --color-muted-foreground: #111827;
@@ -115,13 +117,13 @@
 --color-card: hsl(222 84% 5%);
 --color-card-foreground: hsl(210 40% 98%);
 
---color-secondary: hsl(217 32% 17%);
+--color-secondary: #CFFAFE;
+--color-secondary-foreground: #083344;
 
 --color-border: hsl(217 32% 17%);
 --color-input: hsl(217 32% 17%);
 
 --color-primary-foreground: #64748B;
-  --color-secondary-foreground: #E2E8F0;
   --color-muted: #6B7280;
   --color-muted-foreground: #E5E7EB;
   --color-small-background: #1F2937;
