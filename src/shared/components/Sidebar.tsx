@@ -88,7 +88,7 @@ export default function Sidebar({ collapsed }: { collapsed?: boolean }) {
                         collapsed && "justify-center",
                         isActive
                           ? "bg-[var(--color-secondary)] text-[var(--color-secondary-foreground)]"
-                          : "hover:bg-[var(--color-muted-foreground)] hover:text-white"
+                          : ""
                       )}
                     >
                       <span className={cn(
@@ -119,15 +119,15 @@ export default function Sidebar({ collapsed }: { collapsed?: boolean }) {
       </nav>
 
 
-      <div className=" p-2 bg-[rgba(0,0,0,0.1)]  rounded-full m-1" >
+      <div className=" p-2 bg-[var(--color-order-pending)]  rounded-full m-1" >
         <div className={`flex items-center gap-3 ${collapsed ? 'justify-center' : ''}`}>
           <Avatar className={`h-[24px] w-[24px] ${collapsed ? 'hidden' : ''}`}>
-            <AvatarFallback className="bg-[#FFFFFF] text-[var(--color-foreground)] text-xs font-semibold">
+            <AvatarFallback className="bg-[var(--color-small-foreground)] text-[var(--color-foreground)] text-xs font-semibold">
               BN
             </AvatarFallback>
           </Avatar>
           <div className={`flex-1 min-w-0 ${collapsed ? 'hidden' : ''}`}>
-            <p className="text-xs font-medium text-white truncate">Birame Ndiaye</p>
+            <p className="text-xs font-medium text-[var(--color-secondary-foreground)] truncate">Birame Ndiaye</p>
             <p className="text-xs text-[var(--color-muted)]">Admin</p>
           </div>
           <button className="text-[var(--color-muted)] hover:text-white transition-colors">
