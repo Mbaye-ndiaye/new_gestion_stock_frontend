@@ -6,7 +6,7 @@ import Header from "../shared/components/header"
 
 
 export default function DashboardLayout() {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   return (
     <div className="min-h-screen bg-[var(--color-background)]">
       <Sidebar collapsed={!open} />
