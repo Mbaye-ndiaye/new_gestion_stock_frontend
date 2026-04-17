@@ -20,33 +20,34 @@ export default function DataTable({ columns, data }: any) {
     },
   })
 
-  const getPageNumbers = () => {
-    const total = table.getPageCount()
-    const current = table.getState().pagination.pageIndex
+ const getPageNumbers = () => {
+  const total = table.getPageCount()
+  const current = table.getState().pagination.pageIndex
 
-    const pages = []
+  const pages: (number | string)[] = []
 
-    // Toujours afficher première page
-    pages.push(0)
-
-    // Pages autour de la page actuelle
-    if (current > 2) pages.push("...")
-
-    for (let i = current - 1; i <= current + 1; i++) {
-      if (i > 0 && i < total - 1) {
-        pages.push(i)
-      }
+  for (let i = 0; i < total; i++) {
+    // Toujours afficher première et dernière page
+    if (i === 0 || i === total - 1) {
+      pages.push(i)
     }
-
-    if (current < total - 3) pages.push("...")
-
-    // Toujours afficher dernière page
-    if (total > 1) pages.push(total - 1)
-
-    return pages
+    // Afficher pages autour de la page actuelle
+    else if (i >= current - 1 && i <= current + 1) {
+      pages.push(i)
+    }
+    // Ajouter "..." une seule fois
+    else if (
+      (i === current - 2 && current > 3) ||
+      (i === current + 2 && current < total - 6)
+    ) {
+      pages.push("...")
+    }
   }
 
-
+  return pages.filter((item, index, arr) => {
+  return item !== "..." || arr[index - 1] !== "..."
+})
+}
 
   return (
     <>
@@ -88,7 +89,7 @@ export default function DataTable({ columns, data }: any) {
           </table>
         </div>
       </div>
-      <div className="flex items-center justify-between p-4">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between p-4">
 
         {/* Texte */}
         <span className="text-sm text-[var(--color-muted-foreground)]">
@@ -97,7 +98,7 @@ export default function DataTable({ columns, data }: any) {
         </span>
 
         {/* Boutons */}
-        <div className="flex items-center gap-2">
+        <div className="flex  items-center mt-4 md:mt-0 gap-2">
 
           {/* Previous */}
           <button
@@ -107,20 +108,6 @@ export default function DataTable({ columns, data }: any) {
           >
             <ChevronLeft />
           </button>
-
-          {/* Pages */}
-          {/* {[...Array(table.getPageCount())].map((_, i) => (
-            <button
-              key={i}
-              onClick={() => table.setPageIndex(i)}
-              className={`px-4 py-2 rounded-lg text-sm ${table.getState().pagination.pageIndex === i
-                ? "bg-[var(--color-stock-ok)] text-white shadow-xl"
-                : "text-[var(--color-muted)]"
-                }`}
-            >
-              {i + 1}
-            </button>
-          ))} */}
 
           {getPageNumbers().map((page, index) => {
             if (page === "...") {

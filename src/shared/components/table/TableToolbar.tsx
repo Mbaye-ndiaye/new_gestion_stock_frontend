@@ -18,7 +18,7 @@ export default function TableToolbar({ search, setSearch, viewMode, setViewMode,
         <div className="flex flex-col sm:flex-row gap-3 sm:items-center justify-between bg-[var(--color-card)] border border-[var(--color-input)] rounded-2xl p-4">
 
             {/* 🔍 Search */}
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                 <div className="relative w-full sm:max-w-md">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
 
@@ -33,7 +33,7 @@ export default function TableToolbar({ search, setSearch, viewMode, setViewMode,
 
               
 
-                <div className="flex flex-col sm:flex-row  items-center gap-2 ">
+                <div className="flex flex-col sm:flex-row items-center gap-2 ">
 
                     {/* Catégorie */}
                     <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--color-card)] border border-[var(--color-input)] text-[var(--color-muted)] text-sm">
